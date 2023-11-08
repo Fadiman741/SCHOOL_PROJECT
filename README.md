@@ -1,4 +1,4 @@
-##SCHOOL_PROJECT
+## SCHOOL_PROJECT
 
 #### This is a combined repo
 
