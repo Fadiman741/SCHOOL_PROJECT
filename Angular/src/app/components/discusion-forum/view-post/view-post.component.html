@@ -1,0 +1,69 @@
+<app-pagetiltle
+  title="HOME"
+  [breadcrumbItems]="breadCrumbItems"
+></app-pagetiltle>
+<div style="max-width: 1200px; min-height: 100vh; margin: auto; padding: 10px">
+  <div class="announcement1 bg-light" *ngIf="post">
+    <!-- Comment post -->
+    <div class="comment">
+      <div class="details">
+        <!-- User Avatar -->
+        <div
+          class="detials1"
+          style="
+            width: 40px;
+            height: 40px;
+            background-color: #ddd;
+            border-radius: 10%;
+          "
+        >
+          <img
+            style="border-radius: 10%"
+            src="https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg "
+          />
+        </div>
+        <!-- User Details -->
+        <div class="details2">
+          <h4>{{ post.user?.first_name }} &nbsp; {{ post.user?.last_name }}</h4>
+          <p style="color: #aaa">
+            {{ post?.occupation }} | {{ post?.created_at | lastSeen }}
+          </p>
+        </div>
+      </div>
+      <!-- Comment Content -->
+      <div class="comment-content">
+        <p>{{ post.content }}</p>
+      </div>
+      <!-- Reaction and Toggle Comments -->
+      <div class="reactions">
+        <hr />
+        <ul class="reaction">
+          <li>
+            <span>{{ post.likes }}👍</span> Like
+          </li>
+          <span style="color: #aaa">|</span>
+          <li>
+            <span>{{ post.unlikes }}👎</span> Unlike
+          </li>
+          <span style="color: #aaa">|</span>
+          <li>
+            <span>{{ post.comments.length }}</span>
+            <a style="text-decoration: none"> Comments </a>
+          </li>
+        </ul>
+      </div>
+      <!-- Voting Icons -->
+      <div class="voting-icons">
+        <!-- <span class="vote-icon" (click)="vote(post, 'like')">👍</span>
+        <span class="vote-icon" (click)="vote(post, 'unlike')">👎</span> -->
+      </div>
+    </div>
+    <!-- Nested Comments -->
+    <div *ngIf="post.showComments" class="nested-comments">
+      <div class="comment" *ngFor="let comment of post.comments">
+        Comment post (similar structure as above)
+      </div>
+    </div>
+  </div>
+  <div></div>
+</div>

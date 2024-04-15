@@ -1,0 +1,59 @@
+input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+                width: 100%;
+                padding: 10px;
+                margin-top: 5px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                font-size: 16px;
+}
+form{
+        margin:5%;
+        padding-top:60px
+}
+label{
+        font-weight: 400;
+        text-align: left;
+        padding-top: 10px;;
+}
+span{
+        text-align: right;
+        color: rgb(36, 44, 158);
+        font-size:medium;
+        padding-top: 10px;
+}
+.login-btn input{
+        background-color: rgb(20, 95, 100) ;
+        color: #fff;
+}
+.sign-up {
+        padding-top: 30px;
+}
+.btn-my {
+        width: 100%;
+        padding: 10px;
+        background-color: #145f64;
+        color: #fff;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 18px;
+}
+.social-media-signup {
+        margin-top: 10px;
+        text-align: center;
+}
+.social-icon {
+        display: inline-block;
+        margin: 0 10px;
+}
+.social-icon img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-color: #fff;
+        padding: 6px;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}

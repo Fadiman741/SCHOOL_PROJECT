@@ -1,0 +1,139 @@
+<div style="margin: auto; padding-top: 0px; background-color: #141c3c">
+  <nav
+    class="navbar navbar-expand-lg navbar"
+    style="
+      max-width: 1250px;
+      font-size: small;
+      margin: auto;
+      padding-bottom: 10px;
+    "
+  >
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="">
+        <!-- <h4 style="font-weight: 800;color: rgb(35, 164, 173);">MY SCHOOL</h4> -->
+        <div style="height: 45px">
+          <img src="assets/logo/myschoollogo.png" style="height: 100%" />
+        </div>
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#collapsibleNavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div>
+      <div
+        class="collapse navbar-collapse navigation"
+        id="collapsibleNavbar"
+        style="padding-left: 20px; padding-right: 20px"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="about">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="announcement">ANNOUNCEMENTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="tutor">TUTORING</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              role="button"
+              data-bs-toggle="dropdown"
+              >GRADE 10</a
+            >
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item" routerLink="forum">MATHEMATICS</a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="forum"
+                  >PHYSICAL SCIENCES</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              >GRADE 11</a
+            >
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item" routerLink="forum">MATHEMATICS</a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="forum"
+                  >PHYSICAL SCIENCES</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              >GRADE 12</a
+            >
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item" routerLink="forum">MATHEMATICS</a>
+              </li>
+              <li>
+                <a class="dropdown-item" routerLink="forum"
+                  >PHYSICAL SCIENCES</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown signup">
+            <div data-bs-toggle="dropdown" style="display: flex">
+              <div class="profile">
+                <a class=" " role="button"
+                  ><fa-icon [icon]="faUser"></fa-icon
+                ></a>
+              </div>
+              <li *ngIf="loggedInUser">
+                <a
+                  class="dropdown-item"
+                  routerLink=""
+                  style="text-transform: uppercase; padding-top: 10px"
+                  >{{ currentUser.first_name }} {{ currentUser.last_name }}</a
+                >
+              </li>
+            </div>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <!-- <li class="dropdown-item">Profile</li> -->
+              <div *ngIf="loggedInUser == null">
+                <li>
+                  <a class="dropdown-item" routerLink="auth/signin">Sign In</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" routerLink="auth/signup">Sign Up</a>
+                </li>
+              </div>
+              <div *ngIf="loggedInUser != null">
+                <li>
+                  <a class="dropdown-item" routerLink="profile">Profile</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" (click)="logout()">Sign Out</a>
+                </li>
+              </div>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,132 @@
+<app-pagetiltle
+  title="ANNOUNCEMENTS"
+  [breadcrumbItems]="breadCrumbItems"
+></app-pagetiltle>
+<div style="background-color: #121a36">
+  <div
+    class="annoucement background-image"
+    style="max-width: 1218px; min-height: 100vh; margin: auto; padding: 10px"
+  >
+    <!-- ---------CREATE POST ---------------- -->
+    <div class="create-post">
+      <div class="create-details">
+        <div
+          class="detials1"
+          style="
+            width: 40px;
+            height: 40px;
+            background-color: #ddd;
+            border-radius: 10%;
+          "
+        >
+          <img
+            style="border-radius: 10%"
+            src="https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg "
+          />
+        </div>
+        <h3 style="text-transform: uppercase; color: #eee">Lorem Ipsum</h3>
+      </div>
+      <i
+        data-bs-toggle="collapse"
+        data-bs-target="#collapsiblecreatepost"
+        class="fa fa-plus-square-o"
+        aria-hidden="true"
+        style="padding-top: 10px; font-size: 25px; color: #eee"
+      ></i>
+      <!-- <button class="create_announcement"  data-bs-toggle="collapse"  data-bs-target="#collapsiblecreatepost" style="font-size: 14px;">Create Announcement</button> -->
+    </div>
+    <div class="post collapse" id="collapsiblecreatepost">
+      <div class="create_post">
+        <form
+          style="display: flex; flex-direction: column"
+          (ngSubmit)="onAnnoucementSubmit(announcementForm)"
+          #announcementForm="ngForm"
+        >
+          <input
+            class="title bg-light"
+            placeholder="Type you title..."
+            id="title"
+            name="title"
+            ngModel
+            required
+          />
+          <textarea
+            class="textarea bg-light"
+            placeholder="Type your message here ..."
+            id="description"
+            name="description"
+            ngModel
+            required
+          ></textarea>
+          <div style="display: flex; justify-content: flex-end">
+            <button type="submit" style="width: 100px; font-size: 14px">
+              Post
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div style="display: flex; flex-wrap: wrap">
+      <div class="announcement1 bg-light" *ngFor="let item of announcements">
+        <div class="details">
+          <div
+            class="detials1"
+            style="width: 100%; height: 100%; border-radius: 2%"
+          >
+            <!-- <img src={{item.image}}> -->
+            <img
+              src="https://www.kaya959.co.za/wp-content/uploads/2019/03/NSFAS-e1421160716558.png"
+              style="
+                border-top-right-radius: 15px;
+                border-top-left-radius: 15px;
+              "
+            />
+          </div>
+        </div>
+        <div class="details01">
+          <div class="details2">
+            <div style="display: flex; justify-content: space-between">
+              <h4 style="text-transform: uppercase">{{ item.title }}</h4>
+              <div
+                class="icon-container"
+                (mouseenter)="showDropdown = true"
+                (mouseleave)="showDropdown = false"
+              >
+                <i
+                  class="fa fa-pencil-square-o"
+                  aria-hidden="true"
+                  style="padding: 5px; cursor: pointer; float: right"
+                ></i>
+                <div class="dropdown" *ngIf="showDropdown">
+                  <ul>
+                    <li><a (click)="editItem(item.id)">Edit</a></li>
+                    <li>
+                      <a (click)="onDeleteAnnouncement(item.id)">Delete</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- <p style=" text-transform: uppercase;">{{item.user.student}} | {{item.datecreated}} </p> -->
+            <p>
+              {{ item.user.first_name }} &nbsp; {{ item.user.last_name }} |
+              <span style="color: #7d7d7d">{{
+                item.datecreated | lastSeen
+              }}</span>
+            </p>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+        <!-- <div class="reactions">
+            <ul class="reaction">
+                <li>
+                    <span>3</span> LIKES</li>
+                <li><span>2</span> COMMENTS </li>
+                 <li>
+                    <a href="#" class="fa fa-instagram"></a>1</li>
+            </ul>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,376 @@
+<app-pagetiltle
+  title="HOME"
+  [breadcrumbItems]="breadCrumbItems"
+></app-pagetiltle>
+<div class="Home-page" style="margin: 0px">
+  <div class="intro-content" style="padding-top: 130px">
+    <div
+      class="about-line"
+      style="padding-left: 20px; max-width: 1400px; margin: auto"
+    >
+      <h1 style="font-weight: 800; font-family: cursive; font-size: 90px">
+        Education
+      </h1>
+      <h1 style="padding-left: 100px; font-size: 70px; font-family: cursive">
+        Makes a
+      </h1>
+      <h1
+        style="
+          padding-left: 180px;
+          font-weight: 600;
+          font-weight: 400;
+          font-size: 40px;
+          font-family: cursive;
+        "
+      >
+        Better <u style="color: rgb(130, 205, 97)">world</u>.
+      </h1>
+      <p style="max-width: 700px">
+        Our goal is to make learning accessible and engaging for everyone,
+        whether you are a student looking to improve your academic skills or an
+        adult seeking to enhance your knowledge and career prospects.
+      </p>
+      <button
+        style="
+          border: none;
+          border-radius: 5px;
+          padding: 10px;
+          width: 150px;
+          text-transform: uppercase;
+          font-size: 14px;
+          background-color: rgb(130, 205, 97);
+          color: #eee;
+        "
+      >
+        Get Started
+      </button>
+    </div>
+
+    <!-- <img src="https://media.istockphoto.com/id/1000887536/photo/back-view-of-elementary-students-raising-their-arms-on-a-class.jpg?s=612x612&w=0&k=20&c=i0PBNmY4nSgOhHyy9AU5OAiJrOsHk7f7jLcNkO6CApE=" style="width:100%;height:100%"> -->
+  </div>
+  <!-- <div>
+        <owl-carousel-o [options]="customOptions" class="intro-charts">
+            <ng-template carouselSlide>
+                <div class="bottom div1">
+                    <p>Our goal is to make learning accessible and engaging for
+                        everyone, whether you are a student looking to improve
+                        your academic skills or an adult seeking to enhance your
+                        knowledge and career prospects</p>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="bottom div2">
+                    <h2> WE STRIVE TO SEE OUR STUDENTS DOING GREAT WHILE HAVING
+                        AWESOME TIME.</h2>
+                </div>
+            </ng-template>
+            <ng-template carouselSlide>
+                <div class="bottom div3">
+                    <p>Our aim is to equip students with the knowledge and
+                        skills they need to succeed in today's fast-paced world.
+                        ensuring that students acquire a deep understanding of
+                        the subject they are pursuing</p>
+                </div>
+            </ng-template>
+        </owl-carousel-o>
+    </div> -->
+</div>
+<div style="background-color: #121a36; padding: 30px">
+  <div style="padding: 15px; border-radius: 5px; text-transform: uppercase">
+    <h4 style="text-align: center; color: #c4c4c4">Recent Annoucements...</h4>
+  </div>
+  <hr style="border: 1px solid rgb(156, 156, 156)" />
+  <br />
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let item of announcements">
+      <div class="announcement1 bg-light">
+        <div
+          class="details01"
+          style="
+            margin: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid rgb(240, 240, 240);
+          "
+        >
+          <div class="details2">
+            <div style="display: flex; justify-content: space-between">
+              <h4 style="text-transform: uppercase">{{ item.title }}</h4>
+              <div class="icon-container">
+                <!-- <i class="fa fa-pencil-square-o" aria-hidden="true" style="padding: 5px; cursor: pointer; float: right;"></i> -->
+              </div>
+            </div>
+            <!-- <p style=" text-transform: uppercase;">{{item.user.student}} | {{item.datecreated}} </p> -->
+            <p style="text-transform: uppercase">
+              {{ item.user.first_name }} {{ item.user.last_name }} |
+              <span style="color: #7d7d7d; text-transform: lowercase">{{
+                item.datecreated | lastSeen
+              }}</span>
+            </p>
+            <p>{{ item.description }}</p>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+  <!-- </div> -->
+  <br />
+  <hr style="border: 1px solid rgb(156, 156, 156)" />
+</div>
+<div
+  style="background-color: #fff; padding: 20px; max-width: 1200px; margin: auto"
+>
+  <h2
+    style="
+      text-align: center;
+      border-bottom: 4px solid #121a36;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 20px;
+    "
+  >
+    About Us
+  </h2>
+  <div class="about-flex" style="display: flex; justify-content: space-between">
+    <div class="about-section">
+      <img src="assets/about/1.png" style="width: 100%" />
+    </div>
+    <div class="about-section">
+      <h3 style="padding-top: 20px; text-transform: uppercase; color: #121a36">
+        oUR GOAL
+      </h3>
+      <p
+        style="
+          padding: 20px;
+          max-width: 450px;
+          line-height: 1.4;
+          font-size: 14px;
+          border-left: 5px solid #121a36;
+        "
+      >
+        Our goal is to make learning accessible and engaging for everyone,
+        whether you are a student looking to improve your academic skills or an
+        adult seeking to enhance your knowledge and career prospects
+      </p>
+      <h3 style="color: #121a36">
+        WE STRIVE TO SEE STUDENTS DOING GREAT WHILE ENGAGING EACH OTHER.
+      </h3>
+      <p
+        style="
+          padding: 20px;
+          max-width: 450px;
+          line-height: 1.4;
+          font-size: 14px;
+          border-left: 5px solid #121a36;
+        "
+      >
+        Our aim is to equip students with the knowledge and skills they need to
+        succeed in today's fast-paced world. ensuring that students acquire a
+        deep understanding of the subject they are pursuing
+      </p>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div style="display: flex; justify-content: space-between">
+    <div
+      style="
+        width: 300px;
+        background-color: #121a36;
+        height: 150px;
+        border-radius: 10px;
+        border: 1px solid rgb(228, 228, 228);
+        margin: 5px;
+      "
+    >
+      <h1
+        style="
+          padding-top: 40px;
+          text-align: center;
+          font-weight: 800;
+          color: #fff;
+        "
+      >
+        {{ members.length }}+
+      </h1>
+      <p style="text-align: center; color: #aaa">Members</p>
+    </div>
+    <div
+      style="
+        width: 300px;
+        background-color: #121a36;
+        height: 150px;
+        border-radius: 10px;
+        border: 1px solid rgb(228, 228, 228);
+        margin: 5px;
+      "
+    >
+      <h1
+        style="
+          padding-top: 40px;
+          text-align: center;
+          font-weight: 800;
+          color: #fff;
+        "
+      >
+        {{ tutors.length }}+
+      </h1>
+      <p style="text-align: center; color: #aaa">Tutors Available</p>
+    </div>
+    <div
+      style="
+        width: 300px;
+        background-color: #121a36;
+        height: 150px;
+        border-radius: 10px;
+        border: 1px solid rgb(228, 228, 228);
+        margin: 5px;
+      "
+    >
+      <h1
+        style="
+          padding-top: 40px;
+          text-align: center;
+          font-weight: 800;
+          color: #fff;
+        "
+      >
+        {{ institutions.length }}+
+      </h1>
+      <p style="text-align: center; color: #aaa">Institutions</p>
+    </div>
+  </div>
+</div>
+<!-- <div class="bg-light" style="height: 62vh;margin-top: 50px;padding: 20px;">
+    <div style="max-width: 1000px;margin: auto;">
+        <div style="min-height: 40vh;">
+            <div
+                style="background-color: #fff;padding: 15px;max-width: 300px;border: 1px solid rgb(240, 240, 240);border-radius: 5px;">
+                <h4 style="text-align: center;color: #7d7d7d;">Recent
+                    Annocements...</h4>
+            </div>
+            <br>
+            <div>
+
+                <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide
+                        *ngFor="let item of announcements">
+                        <div class="announcement1 bg-light ">
+
+                            <div class="details01"
+                                style="margin: 5px;background-color: #fff;padding:10px;border: 1px solid rgb(240, 240, 240);">
+                                <div class="details2">
+                                    <div
+                                        style="display: flex;justify-content: space-between;">
+                                        <h4 style=" text-transform: uppercase;">{{item.title
+                                            }}</h4>
+                                        <div class="icon-container">
+                                            <i class="fa fa-pencil-square-o" aria-hidden="true" style="padding: 5px; cursor: pointer; float: right;"></i>
+                                        </div>
+                                    </div>
+                                    <p style=" text-transform: uppercase;">{{item.user.student}} | {{item.datecreated}} </p>
+                                    <p>{{item.user.first_name }} &nbsp;
+                                        {{item.user.last_name}} | <span
+                                            style="color: #7d7d7d;">{{item.datecreated
+                                            | lastSeen}}</span> </p>
+                                    <p>{{item.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-template>
+                </owl-carousel-o>
+
+
+            </div>
+        </div>
+        <div style="display: flex;justify-content: space-between;">
+            <div
+                style="width: 300px;background-color: #fff;height: 150px;border-radius: 10px;border: 1px solid rgb(228, 228, 228);margin: 5px;">
+                <h1
+                    style="padding-top: 40px;text-align: center;font-weight: 800;color: #7d7d7d;">{{members.length}}+</h1>
+                <p style="text-align: center;color: #7d7d7d;">Members</p>
+            </div>
+            <div
+                style="width: 300px;background-color:  #fff;height: 150px;border-radius: 10px;border: 1px solid rgb(228, 228, 228);margin: 5px;">
+                <h1
+                    style="padding-top: 40px;text-align: center;font-weight: 800;color: #7d7d7d;">{{tutors.length}}+</h1>
+                <p style="text-align: center;color: #7d7d7d;">Tutors Available</p>
+            </div>
+            <div
+                style="width: 300px;background-color: #fff;height: 150px;border-radius: 10px;border: 1px solid rgb(228, 228, 228);margin: 5px;">
+                <h1
+                    style="padding-top: 40px;text-align: center;font-weight: 800;color: #7d7d7d;">{{institutions.length}}+</h1>
+                <p style="text-align: center;color: #7d7d7d;">Institutions</p>
+            </div>
+        </div>
+    </div>
+</div> -->
+<div style="min-height: 70vh; padding: 50px; background-color: #121a36">
+  <div style="padding: 20px">
+    <h1 style="color: #fff; font-weight: 800; text-transform: uppercase">
+      Tutors
+    </h1>
+    <p style="color: #aaa">
+      Our aim is to empowers students to connect with tutors when seeking
+      academic assistance.
+    </p>
+  </div>
+  <hr style="border: 1px solid rgb(156, 156, 156)" />
+  <br />
+  <br />
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let user of members">
+      <div class="profile-card" style="margin-bottom: 20px">
+        <img
+          src="https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg"
+          alt="Tutor 1"
+        />
+        <div class="profile-info">
+          <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+          <p>Years of Experience: 5 years</p>
+          <p>Subjects: Math, Science</p>
+          <p>Bio: Experienced tutor specializing in Math and Science.</p>
+          <p>Location: New York, NY</p>
+          <p>Languages: English, Spanish</p>
+          <div style="display: flex; justify-content: space-between">
+            <div class="social-icons">
+              <a href="#"
+                ><img
+                  src="assets/social_icons/facebook.png"
+                  alt="Facebook"
+                  style="width: 30px"
+              /></a>
+              <a href="#"
+                ><img
+                  src="assets/social_icons/twitter.png"
+                  alt="Twitter"
+                  style="width: 30px"
+              /></a>
+              <a href="#"
+                ><img
+                  src="assets/social_icons/linkedin.png"
+                  alt="LinkedIn"
+                  style="width: 30px"
+              /></a>
+            </div>
+            <div>
+              <i
+                class="icon send fa fa-paper-plane-o clickable"
+                style="font-size: 22px; padding: 10px; color: rgb(35, 164, 173)"
+                aria-hidden="true"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+  <div>
+    <hr style="border: 1px solid rgb(156, 156, 156)" />
+    <a style="padding-left: 10px; color: #aaa">View All...</a>
+  </div>
+</div>
+<div class="timelines" style="padding: 40px">
+  <app-timeline></app-timeline>
+</div>
+<app-footer></app-footer>

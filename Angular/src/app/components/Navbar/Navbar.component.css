@@ -1,0 +1,70 @@
+* {
+    color: #b1afaf;
+}
+fa-icon{
+    font-size: 15px;
+    color: #fff;
+}
+.navbar-nav {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dropdown-item {
+    font-size: small;
+    color: #6e6b6b;
+}
+
+h4 {
+    padding-top: 10px;
+}
+.login button{
+    padding:6px;
+    background-color: #fff;
+    border-radius: 17px;
+    border: 1px solid #141C3C;
+    width:110px;
+    color: #141C3C;
+    font-weight: 400;
+}
+.login button:hover{
+
+    background-color: #141C3C;
+    color:white;
+
+}
+.profile{
+    border: 1px solid #141C3C;
+    padding-left:8px;
+    padding-top: 2px;
+    background-color:rgb(130, 205, 97);
+    border-radius: 5px;
+    width:30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+/* .navbar-toggler{
+    padding-left: 10px;
+    font-size: 13px;
+} */
+/* Temporary */
+@media screen and (max-width: 992px) {
+    .navigation{
+        /* display:none */
+        background-color: #e4ebfa;
+        width: 100vw;
+    }
+    .signup{
+        padding-bottom:10px;
+    }
+    .profile{
+
+        margin-left: 0px;
+        margin-top: 5px;
+    }
+}  
+
+
+/* =================================================== */

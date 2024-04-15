@@ -1,0 +1,91 @@
+<div
+  style="
+    height: 60px;
+    margin: auto;
+
+    background-color: #09102b;
+  "
+>
+  <div style="max-width: 1250px; font-size: small; margin: auto; padding: 10px">
+    <div class="page-title-box d-flex justify-content-between">
+      <div style="display: flex">
+        <!-- <h5>{{title}}</h5> -->
+        <div class="nav-item dropdown">
+          <!-- <button (click)="viewInbox()"  type="button" class="btn btn-primary">
+                            Inbox <span class="badge ">9</span>
+                        </button> -->
+          <!-- <i class="fa fa-envelope" aria-hidden="true"></i> -->
+        </div>
+
+        <div class="nav-item dropdown">
+          <!-- <button (click)=viewNotifications() data-bs-toggle="dropdown" type="button" class="btn btn-primary">
+                        Notifications <span class="badge badge-light">4</span>
+                    </button> -->
+          <!-- <ul class="dropdown-menu  dropdown-menu-start">
+                        <li class="dropdown-item">
+                            <div style="display: flex;">
+                                <div class="detials1" style="width:35px;height:35px;background-color: #ddd;border-radius: 50%;">
+                                    <img src="https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg " style="width:100%;height: 100%;">
+                                </div>
+                                <p style="padding:7px"><b>Lorem Ipsum</b> liked your recent post</p>
+                            </div>
+                        </li>
+                        <li><a class="dropdown-item" routerLink="forum">
+                            <div style="display: flex;">
+                                <div class="detials1" style="width:35px;height:35px;background-color: #ddd;border-radius: 50%;">
+                                    <img src="https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg " style="width:100%;height: 100%;">
+                                </div>
+                                <p style="padding:7px"><b>Lorem Ipsum</b> liked your recent post</p>
+                            </div>
+
+                        </a></li>
+                        <li><a class="dropdown-item" routerLink="forum">
+                            <div style="display: flex;">
+                                <div class="detials1" style="width:35px;height:35px;background-color: #ddd;border-radius: 50%;">
+                                    <img src="https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg" style="width:100%;height: 100%;">
+                                </div>
+                                <p style="padding:7px"><b>Lorem Ipsum</b> liked your recent post</p>
+                            </div>
+                        </a></li>
+                        <li><a class="dropdown-item" routerLink="forum">
+                            <div style="display: flex;">
+                                <div class="detials1" style="width:35px;height:35px;background-color: #ddd;border-radius: 50%;">
+                                    <img src="https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg" style="width:100%;height: 100%;">
+                                </div>
+                                <p style="padding:7px"><b>Lorem Ipsum</b> liked your recent post</p>
+                            </div>
+                        </a></li>
+                    </ul> -->
+        </div>
+        <a (click)="viewInbox()"
+          ><p class="icons">
+            <fa-icon [icon]="faEnvelope"></fa-icon><span class="badge">10</span>
+          </p></a
+        >
+        <a (click)="viewNotifications()"
+          ><p class="icons">
+            <fa-icon [icon]="faBell"></fa-icon
+            ><span class="badge">{{ count }}</span>
+          </p></a
+        >
+      </div>
+      <div class="page-title-right">
+        <ol class="breadcrumb" style="padding-top: 8px">
+          <ng-container *ngFor="let item of breadcrumbItems">
+            <li class="breadcrumb-item" *ngIf="!item.active">
+              <a
+                >{{ item.label }}
+                <sup *ngIf="preferenceText" class="text-{{ state }}">{{
+                  preferenceText
+                }}</sup></a
+              >
+            </li>
+            <li class="breadcrumb-item" *ngIf="item.active">
+              {{ item.label }}
+            </li>
+          </ng-container>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>

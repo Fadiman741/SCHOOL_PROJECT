@@ -1,0 +1,107 @@
+<!-- <hr> -->
+<!-- <div class="profile">
+  <div class="profile-header">
+    <h1>{{ currentUser.first_name }} {{ currentUser.last_name }}</h1>
+    <p>{{ bio }}</p>
+  </div>
+  <div class="profile-details">
+    <div class="contact-info">
+      <h2>Contact Information</h2>
+      <p><strong>Email:</strong> {{ currentUser.email }}</p>
+      <p><strong>Phone:</strong> {{ phone }}</p>
+    </div>
+    <div class="location">
+      <h2>Location</h2>
+      <p>{{ location }}</p>
+    </div>
+    <div class="subjects">
+      <h2>Subjects</h2>
+      <ul>
+        <li *ngFor="let subject of subjects">{{ subject }}</li>
+      </ul>
+    </div>
+  </div>
+</div> -->
+
+<!-- <hr> -->
+<app-pagetiltle
+  title="ANNOUNCEMENTS"
+  [breadcrumbItems]="breadCrumbItems"
+></app-pagetiltle>
+<div style="max-width: 1200px; margin: auto">
+  <div class="profile">
+    <div class="profile-header">
+      <h1>
+        <strong
+          >{{ currentUser.first_name }} {{ currentUser.last_name }}</strong
+        >
+      </h1>
+      <p>{{ bio }}</p>
+      <hr />
+    </div>
+    <div class="profile-details">
+      <div class="profile-card">
+        <img
+          class="profile_picture"
+          src="https://marketplace.canva.com/EAFEits4-uw/1/0/1600w/canva-boy-cartoon-gamer-animated-twitch-profile-photo-oEqs2yqaL8s.jpg"
+          alt="Tutor 1"
+        />
+        <div class="profile-info">
+          <div style="max-width: 10000px; width: 100%">
+            <p>Years of Experience: 5 years</p>
+            <p>Role: Tutor</p>
+            <p>Subjects: Math</p>
+            <p>School : Rebone Secondary school.</p>
+            <p>Location: New York, NY</p>
+            <p>Languages: English, Spanish</p>
+            <div
+              class="social-icons"
+              style="display: flex; flex-direction: column"
+            >
+              <a href="#"
+                ><img
+                  src="assets/social_icons/facebook.png"
+                  alt="Facebook"
+                />www.facebook.com/{{ currentUser.first_name }}</a
+              >
+              <a href="#"
+                ><img
+                  src="assets/social_icons/twitter.png"
+                  alt="Twitter"
+                />www.twitter.com/{{ currentUser.first_name }}</a
+              >
+              <a href="#"
+                ><img
+                  src="assets/social_icons/linkedin.png"
+                  alt="LinkedIn"
+                />www.linkedin.com/{{ currentUser.first_name }}</a
+              >
+            </div>
+          </div>
+          <!-- <h2>{{ user.first_name }} {{ user.last_name }}</h2> -->
+
+          <!-- <div class="send-icon">
+          <i class="fa fa-paper-plane-o"></i>
+        </div> -->
+        </div>
+      </div>
+      <div class="additional-info">
+        <div class="contact-info">
+          <h2><strong>Contact Information</strong></h2>
+          <p><strong>Email:</strong> {{ currentUser.email }}</p>
+          <p><strong>Phone:</strong> {{ phone }}</p>
+        </div>
+        <div class="location">
+          <h2>Location</h2>
+          <p>{{ location }}</p>
+        </div>
+        <div class="subjects">
+          <h2>Subjects</h2>
+          <ul>
+            <li *ngFor="let subject of subjects">{{ subject }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

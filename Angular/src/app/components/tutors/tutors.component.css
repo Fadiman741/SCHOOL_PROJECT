@@ -1,0 +1,195 @@
+.global {
+    background-image: linear-gradient(45deg, rgba(89, 82, 82, 0.75), rgba(8, 83, 156, 0.75)), url("https://www.greatschools.org/gk/wp-content/uploads/2022/02/The-inclusivity-school.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.search-tutor {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    background-color: #fff;
+    background-image: linear-gradient(45deg, rgba(245, 70, 66, 0.75), rgba(8, 83, 156, 0.75)), url('https://media.istockphoto.com/id/825383494/photo/business-man-pushing-large-stone-up-to-hill-business-heavy-tasks-and-problems-concept.jpg?s=612x612&w=0&k=20&c=wtqvbQ6OIHitRVDPTtoT_1HKUAOgyqa7YzzTMXqGRaQ=');
+    background-position: center;
+    background-size: cover;
+}
+.empty{
+     background-image: linear-gradient(45deg, rgba(62, 55, 54, 0.75), rgba(26, 51, 77, 0.75)), url('https://www.responsiveclassroom.org/wp-content/uploads/2019/11/MS-student-group-conversation-1024x683.jpeg');
+    background-position: center;
+    background-size: cover;
+}
+.tutor1 {
+    width: 65%;
+    height: 100%;
+}
+
+.tutor2 {
+    width: 35%;
+    height: 100%;
+    background-color: #141C3C;
+    text-align: center;
+    padding-top: 10%;
+}
+
+.tutor2 button {
+    text-align: center;
+    width: 20%;
+    padding: 8px;
+    padding-left: 10px;
+    border-radius: 6px;
+    border: none;
+    margin-top: 5%;
+    color: #fff;
+    background-color: #192249;
+}
+
+.tutor2 button:hover {
+    text-align: center;
+    background-color: rgb(130, 205, 97);
+    /* border: 1px solid rgb(35, 164, 173); */
+}
+
+.tutor2 h1 {
+    padding-top: 30px;
+    margin-top: 20px;
+    color: aliceblue;
+    font-weight: 600;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.tutor2 input {
+    padding: 7px;
+    width: 70%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 3%;
+    margin-top: 3%;
+    border-radius: 5px;
+    padding-left: 20px;
+    border: none;
+}
+
+.tutor-subject {
+    width: 100%;
+    background-color:  #141C3C;
+    opacity: 01;
+}
+
+.tutor-subject h1 {
+    color: #fff;
+    text-align: center;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 800;
+}
+
+.buttons h2 {
+    color:  #141C3C;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.buttons button {
+    width: 90%;
+    margin: auto;
+    height: 100px;
+    border-radius: 5px;
+    margin-top: 1%;
+    margin-bottom: 7%;
+    background-color: aliceblue;
+    border: 1px solid rgb(3, 62, 66);
+}
+
+.buttons button:hover {
+    background-color: #141C3C;
+    color: #fff;
+}
+
+.become-tutor {
+    text-align: center;
+    width: 30%;
+    background-color: #192249;
+    /* border: 1px solid rgb(35, 164, 173); */
+    border-radius: 10px;
+    margin-left:1%;
+}
+
+.get-tutor {
+    text-align: center;
+    width: 30%;
+    background-color: #192249;
+    /* border: 1px solid rgb(35, 164, 173); */
+    border-radius: 10px;
+    margin-right: 1%;
+    margin-left: 2%;
+}
+
+.get-tutor h3 {
+    color: aliceblue;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.become-tutor h3 {
+    color: aliceblue;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+.get-tutor button {
+    width: 130px;
+    margin: 3%;
+    border-radius: 7px;
+    border: none;
+    padding: 8px;
+    background-color: #141C3C;
+    color: aliceblue;
+    /* border: 1px solid rgb(35, 164, 173); */
+}
+
+.get-tutor button:hover {
+    /* border: 1px solid rgb(35, 164, 173); */
+    background-color: rgb(130, 205, 97);
+    color: aliceblue;
+}
+
+.become-tutor button {
+    width: 130px;
+    margin: 5%;
+    border-radius: 7px;
+    border: none;
+    padding: 8px;
+    background-color: #141C3C;
+    color: aliceblue;
+    /* border: 1px solid rgb(35, 164, 173); */
+}
+
+.become-tutor button:hover {
+    /* border: 1px solid rgb(35, 164, 173); */
+    background-color: rgb(130, 205, 97);
+    color: aliceblue;
+}
+fa-icon{
+    font-size: 70px;
+    margin:auto;
+    color: #fff;
+}
+
+@media screen and (max-width: 650px) {
+    .become-tutor {
+        width: 50%;
+    }
+    
+    .get-tutor {
+        width: 50%;
+    }
+    .tutor1 {
+        display:none
+    }
+    .tutor2 {
+        width: 100%;
+    padding-top: 30%;
+
+    }
+    
+    
+    
+}

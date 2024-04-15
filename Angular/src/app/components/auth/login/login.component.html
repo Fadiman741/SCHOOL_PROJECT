@@ -1,0 +1,27 @@
+<!-- <app-pagetiltle></app-pagetiltle> -->
+<div style="margin:auto;padding-top: 50px;max-width: 500px;">
+  <div>
+    <form  (ngSubmit)="onSignInSubmit(registerForm)" #registerForm="ngForm">
+      <label for="email">Email : </label>
+      <input type="text" placeholder="Email" id="email" name="email" ngModel required>
+      <label for="email">Password : </label>
+      <input type="text" placeholder="********" id="password" name="password" ngModel required>
+      
+      <span >Forgot Password ?</span>
+      <div class="text-center login-btn">
+        <button type="submit" class="btn btn-my" style="height: 40px;background-color: rgb(20, 95, 100) ; color: #fff; ;">Sign In</button>
+      </div>
+    </form>
+   
+    <app-flash-message></app-flash-message>
+    <div class="social-media-signup">
+      <p>Or sign In with:</p>
+      <a href="#" class="social-icon"><img src="assets/social_icons/facebook.png" alt="Facebook"></a>
+      <a href="#" class="social-icon"><img src="assets/social_icons/twitter.png" alt="Twitter"></a>
+      <a href="#" class="social-icon"><img src="assets/social_icons/google.png" alt="Google"></a>
+    </div>
+    <div class="text-center sign-up">
+      Don`t have an account ? <a [routerLink]="['/auth/signup']" style="color: rgb(36, 44, 158);">Sign Up</a>  here.
+  </div>
+  </div>
+</div>

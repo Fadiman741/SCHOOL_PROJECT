@@ -1,0 +1,66 @@
+<app-pagetiltle title="TUTORING" [breadcrumbItems]="breadCrumbItems"></app-pagetiltle>
+<div class="global">
+    <div class="search-tutor">
+        <div class="tutor1"></div>
+        <div class=" column tutor2">
+            <h1>Find Your Perfect Tutor</h1>
+            <input type="text" placeholder="Subject">
+            
+            <input type="text" placeholder="Grade">
+            <button (click)="openTutors()">Search</button>
+        </div>
+    </div>
+    
+        <div class="empty" style="height: 70vh;width: 100%;background-color: aliceblue;">
+
+    </div>
+    <div style="background-color:#141C3C;padding:10px">
+        <div style="max-width: 1250px;margin: auto;display: flex;padding-top: 20px;padding-bottom: 20px;">
+            <div class="become-tutor">
+                <fa-icon [icon]="faBookOpenReader"></fa-icon>
+                <h3>Become a tutor</h3>
+                <button>CLICK HERE</button>
+
+            </div>
+            <div class="get-tutor">
+                <fa-icon [icon]="faChalkboardUser"></fa-icon>
+                <h3>Get a tutor</h3>
+                <button (click)="openTutors()">CLICK HERE</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="empty" style="height: 70vh;width: 100%;background-color: aliceblue;">
+
+    </div>
+    <div class="tutor-subject">
+        <div style="padding-top: 40px;">
+            <h1>Find Tutors By Subject</h1>
+            <hr style="max-width: 400px;padding-left: 20px;padding-right: 20px;margin: auto;color:rgb(249, 249, 249);border: 4px solid rgb(97, 207, 49);">
+        </div>
+        <div style="max-width: 800px;margin: auto;text-align: center;padding:2%">
+
+            <div style="display: flex; padding:3% ;margin:1%;background-color: aliceblue;border-radius: 15px; ">
+                <div class="buttons">
+                    <h2>Grade 10</h2>
+                    <button>Accounting</button>
+                    <button>mathematics</button>
+                    <button>Physical Science</button>
+                </div>
+                <div class="buttons">
+                    <h2>Grade 11</h2>
+                    <button>Accounting</button>
+                    <button>mathematics</button>
+                    <button>Physical Science</button>
+                </div>
+                <div class="buttons">
+                    <h2>Grade 12</h2>
+                    <button>Accounting</button>
+                    <button>mathematics</button>
+                    <button>Physical Science</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
