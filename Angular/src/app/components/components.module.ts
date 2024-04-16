@@ -32,6 +32,7 @@ import { ViewPostComponent } from './discusion-forum/view-post/view-post.compone
 import { TimelineComponent } from './timeline/timeline.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import {ViewAnnouncementComponent} from './announcements/view-announcement/view-announcement.component'
 
 // import { MatButtonModule,  MatCommonModule} from '@angular/material';
 
@@ -73,8 +74,9 @@ import { CreateAnnoucementComponent } from './modals/create-annoucement/create-a
     CreateAnnoucementComponent,
     EditProfileComponent,
     ProfilePageComponent,
+    ViewAnnouncementComponent,
     LastSeenPipe
   ],
-  exports:[NavbarComponent,HomepageComponent,AboutComponent,TopNavComponent,PagetiltleComponent,TutorsComponent,TutorlistComponent,PageNotfoundComponent,DiscusionForumComponent,InboxComponent,NotificationsComponent,ChatComponent,FooterComponent,LastSeenPipe]
+  exports:[NavbarComponent,HomepageComponent,AboutComponent,TopNavComponent,PagetiltleComponent,TutorsComponent,TutorlistComponent,PageNotfoundComponent,DiscusionForumComponent,InboxComponent,NotificationsComponent,ChatComponent,FooterComponent,ViewAnnouncementComponent,LastSeenPipe]
 })
 export class ComponentsModule { }

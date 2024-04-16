@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
 // import { ModalServiceService} from '../../modal-services/modal-service.service'
 import { NgForm } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -24,7 +24,7 @@ export class DiscusionForumComponent implements OnInit {
   currentUser: any;
 
   // constructor(private apiservice: ApiService,private router:Router ,private modalservice:ModalServiceService) { }
-  constructor(private apiservice: ApiService,private router:Router ) { }
+  constructor(private route: ActivatedRoute,private apiservice: ApiService,private router:Router ) { }
 
   ngOnInit() {
     this.breadCrumbItems = [{ label: 'Home page' },{ label: 'grade 10' },{ label: 'Mathematics' }];
@@ -59,7 +59,7 @@ export class DiscusionForumComponent implements OnInit {
       }
     );
   };
-getAnnouncements = () => {
+  getAnnouncements = () => {
     this.apiservice.getAllAnnouncements().subscribe(
       data => {
         this.announcements = data.slice(0, 2);;
@@ -75,13 +75,10 @@ getAnnouncements = () => {
     this.apiservice.deletePost(postId).subscribe(
       () => {
         console.log('Item deleted successfully');
-        
         this.posts = this.posts.filter((post: { id: any; }) => post.id !== postId)
-        // Handle any other actions after successful deletion
       },
       (error) => {
         console.error('Error deleting item:', error);
-        // Handle errors
       }
       )
   }
@@ -92,9 +89,7 @@ getAnnouncements = () => {
   viewPost(data:any) {
     this.router.navigate(['/view-post', data.id]);
   }
-  // openModal() {
-  //   this.modalservice.openModal();
-  // }
+
   editItem(id:number) {
     // Implement your edit logic here
     console.log('Edit item clicked');
@@ -113,10 +108,9 @@ getAnnouncements = () => {
   //   comment.showNestedComments = !comment.showNestedComments; // Toggle the showNestedComments property
   // }
 
-  onlikePost(post: any): void {
-    this.apiservice.likePost(post.id).subscribe((data: any) => {
-      post.liked = !post.liked;
-      post.likes++;
+  onlikePost(postID: any): void {
+    this.apiservice.likePost(postID).subscribe((data: any) => {
+      console.log(Response, " Post liked Succesful ")
     }),
     (error: any) => {
       console.error('Error while liking the post', error);
@@ -149,4 +143,7 @@ getAnnouncements = () => {
       );
     }
   }
+  
+
+
 }

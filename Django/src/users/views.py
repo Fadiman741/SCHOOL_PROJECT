@@ -8,12 +8,13 @@ from rest_framework.decorators import (
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
 from rest_framework.authtoken.models import Token
-from users.models import Announcement, Notification, User, Post, Message, Comment
+from users.models import Announcement,Grade, Subject, Subtopic, Notification, User, Post, Message, Comment
 
 from django.contrib.auth import authenticate, login, logout
 from .serializers import (
     UserSerializer,
     AnnouncementSerialiazer,
+    GradeSerializer, SubjectSerializer, SubtopicSerializer,
     PostSerializer,
     CommentSerializer,
     NotificationSerializer,
@@ -137,9 +138,114 @@ def update_announcement(request, pk=id):
         announcement.delete()
         return Response("Announcement deleted successfull")
 
+# ==============================DROP DOWN==============================
 
+@api_view(['GET', 'POST'])
+@permission_classes([AllowAny])
+def grade_list(request):
+    if request.method == 'GET':
+        grades = Grade.objects.all()
+        serializer = GradeSerializer(grades, many=True)
+        return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = GradeSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes([AllowAny])
+def grade_detail(request, pk):
+    try:
+        grade = Grade.objects.get(pk=pk)
+    except Grade.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = GradeSerializer(grade)
+        return Response(serializer.data)
+    elif request.method == 'PUT':
+        serializer = GradeSerializer(grade, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        grade.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+    
+
+@api_view(['GET', 'POST'])
+@permission_classes([AllowAny])
+def subject_list(request):
+    if request.method == 'GET':
+        subjects = Subject.objects.all()
+        serializer = SubjectSerializer(subjects, many=True)
+        return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = SubjectSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes([AllowAny])
+def subject_detail(request, pk):
+    try:
+        subject = Subject.objects.get(pk=pk)
+    except Subject.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = SubjectSerializer(subject)
+        return Response(serializer.data)
+    elif request.method == 'PUT':
+        serializer = SubjectSerializer(subject, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        subject.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+@api_view(['GET', 'POST'])
+@permission_classes([AllowAny])
+def subtopic_list(request):
+    if request.method == 'GET':
+        subtopics = Subtopic.objects.all()
+        serializer = SubtopicSerializer(subtopics, many=True)
+        return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = SubtopicSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+@api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes([AllowAny])
+def subtopic_detail(request, pk):
+    try:
+        subtopic = Subtopic.objects.get(pk=pk)
+    except Subtopic.DoesNotExist:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+
+    if request.method == 'GET':
+        serializer = SubtopicSerializer(subtopic)
+        return Response(serializer.data)
+    elif request.method == 'PUT':
+        serializer = SubtopicSerializer(subtopic, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    elif request.method == 'DELETE':
+        subtopic.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 # =============================POSTS=================================
-
 
 @api_view(["GET"])
 @permission_classes([AllowAny])
@@ -194,6 +300,7 @@ def likepost(request, pk=id):
         post.dislikes.remove(request.user)
     post.save()
     return Response({"message": "Post liked successfully"})
+
 
 # ====================================LOGIC============================
 @api_view(['POST'])

@@ -114,6 +114,13 @@ private messageType: string | null = null;
      updateAnnouncement(announcementId: number) : Observable<any>{
           return this.http.get(`${this.baseUrls}/announcement/${announcementId}/`,{ headers: this.headers })
      }
+// ===================================================================================================
+     getGrades() : Observable<any>{
+          return this.http.get(this.baseUrls + '/grades/')
+     }
+     getSubjects() : Observable<any>{
+          return this.http.get(this.baseUrls + '/subjects/')
+     }
 //================================================POSTS================================================
      create_posts(announcement: any): Observable<any> {
           return this.http.post(this.baseUrls +'/create_post/',announcement,{ headers: this.headers });
@@ -145,7 +152,7 @@ private messageType: string | null = null;
      }
 //================================================COMMENTS================================================
      create_comments(announcement: any): Observable<any> {
-          return this.http.post(this.baseUrls+'/create_comment/',announcement);
+          return this.http.post(this.baseUrls+'/create_comment/',announcement,{ headers: this.headers });
           }
      getAllcomments() : Observable<any>{
           return this.http.get(this.baseUrls + '/comments/')
@@ -154,10 +161,10 @@ private messageType: string | null = null;
           return this.http.get(`${this.baseUrls}/comment/${commentId}`);
      }
      deleteComment(commentId: number): Observable<any> {
-          return this.http.get(`${this.baseUrls}/comment/${commentId}`);
+          return this.http.get(`${this.baseUrls}/comment/${commentId}`,{ headers: this.headers });
      }
      updateComment(commentId: number): Observable<any> {
-          return this.http.get(`${this.baseUrls}/comment/${commentId}`);
+          return this.http.get(`${this.baseUrls}/comment/${commentId}`,{ headers: this.headers });
      }
 //================================================NOTIFICATIONS================================================
 

@@ -38,14 +38,18 @@ export class NavbarComponent implements OnInit {
     { label: 'MATHEMATICS', routerLink: '/grade12/mathematics' },
     { label: 'PHYSICAL SCIENCES', routerLink: '/grade12/physical-sciences' }
   ];
+  grades: any;
+  subjectslist: any;
 
   constructor(private apiservice: ApiService,private router:Router) { }
 
   ngOnInit() {
     this.loggedInUser = localStorage.getItem('loggedInUser');
     console.log(this.loggedInUser)
+    this.getGrades();
+    this.getSubject();
 
-     this.apiservice.getCurrentUser().subscribe(
+    this.apiservice.getCurrentUser().subscribe(
       response => {
         this.currentUser = response;
         console.log(this.currentUser)
@@ -65,6 +69,28 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/']).then(()=>{
       window.location.reload()
     })
+  }
+  getGrades() {
+    this.apiservice.getGrades().subscribe(
+      response => {
+        this.grades = response;
+        console.log("Grades", this.grades)
+      },
+      error => {
+        console.error('Error:', error);
+      }
+    );
+  }
+  getSubject() {
+    this.apiservice.getSubjects().subscribe(
+      response => {
+        this.subjectslist = response;
+        console.log("Subjects", this.subjectslist)
+      },
+      error => {
+        console.error('Error:', error);
+      }
+    );
   }
 
 }

@@ -226,7 +226,7 @@
     background-color: #f0f0f0;
   }
   .card-description{
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
       display: -webkit-box;
       line-height: 1.65;
       -webkit-box-orient: vertical;

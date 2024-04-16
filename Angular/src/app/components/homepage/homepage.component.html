@@ -95,7 +95,12 @@
         >
           <div class="details2">
             <div style="display: flex; justify-content: space-between">
-              <h4 style="text-transform: uppercase">{{ item.title }}</h4>
+              <h4
+                onclick="navigateToViewAnnouncement(item.id)"
+                style="text-transform: uppercase"
+              >
+                {{ item.title }}
+              </h4>
               <div class="icon-container">
                 <!-- <i class="fa fa-pencil-square-o" aria-hidden="true" style="padding: 5px; cursor: pointer; float: right;"></i> -->
               </div>

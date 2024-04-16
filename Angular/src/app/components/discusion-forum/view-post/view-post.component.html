@@ -26,7 +26,7 @@
         <div class="details2">
           <h4>{{ post.user?.first_name }} &nbsp; {{ post.user?.last_name }}</h4>
           <p style="color: #aaa">
-            {{ post?.occupation }} | {{ post?.created_at | lastSeen }}
+            {{ post.user.occupation }} | {{ post?.created_at | lastSeen }}
           </p>
         </div>
       </div>
@@ -41,29 +41,46 @@
           <li>
             <span>{{ post.likes }}👍</span> Like
           </li>
-          <span style="color: #aaa">|</span>
+          <!-- <span style="color: #aaa">|</span>
           <li>
             <span>{{ post.unlikes }}👎</span> Unlike
-          </li>
-          <span style="color: #aaa">|</span>
+          </li> -->
+          <!-- <span style="color: #aaa">|</span> -->
           <li>
             <span>{{ post.comments.length }}</span>
             <a style="text-decoration: none"> Comments </a>
           </li>
         </ul>
       </div>
-      <!-- Voting Icons -->
-      <div class="voting-icons">
-        <!-- <span class="vote-icon" (click)="vote(post, 'like')">👍</span>
-        <span class="vote-icon" (click)="vote(post, 'unlike')">👎</span> -->
+      <div *ngIf="post.showComments" class="nested-comments">
+        <div class="comment" *ngFor="let comment of post.comments">
+          Comment post (similar structure as above)
+        </div>
       </div>
     </div>
-    <!-- Nested Comments -->
-    <div *ngIf="post.showComments" class="nested-comments">
-      <div class="comment" *ngFor="let comment of post.comments">
-        Comment post (similar structure as above)
+    <div>
+      <!-- <div class="post collapse" id="collapsiblecreatepost"> -->
+      <div class="create_post">
+        <form
+          style="display: flex; flex-direction: column"
+          (ngSubmit)="onComment(forumForm)"
+          #forumForm="ngForm"
+        >
+          <textarea
+            class="textarea bg-light"
+            id="comment"
+            name="comment"
+            placeholder="Comment here . . ."
+            ngModel
+            required
+            style="width: 100%; border: 1px solid #ccc; padding: 10px"
+          ></textarea>
+          <div style="display: flex; justify-content: flex-end">
+            <button type="submit">Comment</button>
+          </div>
+        </form>
       </div>
+      <!-- </div> -->
     </div>
   </div>
-  <div></div>
 </div>

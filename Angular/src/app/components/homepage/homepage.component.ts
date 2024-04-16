@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -18,7 +19,7 @@ export class HomepageComponent implements OnInit {
   students: any;
   announcements: any;
 
-  constructor( private apiservice:ApiService) { }
+  constructor( private apiservice:ApiService,private router:Router) { }
 
   ngOnInit() {
     this.breadCrumbItems = [{ label: 'Home page' }];
@@ -73,7 +74,7 @@ export class HomepageComponent implements OnInit {
         items: 2
       },
       760: {
-        items: 2
+        items: 3
       },
       1200: {
         items: 3
@@ -84,5 +85,7 @@ export class HomepageComponent implements OnInit {
     },
     nav: true
   }
-
+  navigateToViewAnnouncement(id: number): void {
+    this.router.navigate(['view-announcement/', id]);
+  }
 }

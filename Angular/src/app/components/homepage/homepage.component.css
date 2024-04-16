@@ -183,17 +183,24 @@
 
    .details2 p {
        font-size: small;
-       -webkit-line-clamp: 5;
+       -webkit-line-clamp: 4;
        display: -webkit-box;
        line-height: 1.65;
        -webkit-box-orient: vertical;
        overflow: hidden;
        text-overflow: ellipsis;
-       padding-top: -10px
+       padding-top: -10px;
+            /* padding-bottom: 10px; */
    }
 
    .details2 h4 {
        color: #141C3C;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-top: -10px; 
    }
 
    .detials1 img {

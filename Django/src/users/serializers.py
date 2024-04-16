@@ -7,6 +7,10 @@ from .models import (
     Message,
     UserProfile,
     Notification,
+    Grade,
+    Subject,
+    Subtopic
+
 )
 
 
@@ -36,7 +40,20 @@ class AnnouncementSerialiazer(serializers.ModelSerializer):
     def __str__(self):
         return self.user
 
+class GradeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Grade
+        fields = '__all__'
 
+class SubjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Subject
+        fields = '__all__'
+
+class SubtopicSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Subtopic
+        fields = '__all__'
 class PostSerializer(serializers.ModelSerializer):
     user = UserSerializer()
 

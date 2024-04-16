@@ -1,0 +1,51 @@
+<app-pagetiltle
+  title="HOME"
+  [breadcrumbItems]="breadCrumbItems"
+></app-pagetiltle>
+<div style="padding: 20px; max-width: 1000px; margin: auto">
+  <div class="announcement1 bg-light">
+    <div class="details">
+      <div
+        class="detials1"
+        style="max-width: 250px; height: 100%; border-radius: 2%; padding: 10px"
+      >
+        <!-- <img src={{announcement.image}}> -->
+        <img
+          src="https://www.kaya959.co.za/wp-content/uploads/2019/03/NSFAS-e1421160716558.png"
+          style="border-top-right-radius: 15px; border-top-left-radius: 15px"
+        />
+      </div>
+    </div>
+    <div class="details01">
+      <div class="details2">
+        <div style="display: flex; justify-content: space-between">
+          <h4 style="text-transform: uppercase">{{ announcement.title }}</h4>
+          <div>
+            <!-- <i
+              class="fa fa-pencil-square-o"
+              aria-hidden="true"
+              style="padding: 5px; cursor: pointer; float: right"
+            ></i> -->
+            <div class="dropdown" *ngIf="showDropdown">
+              <ul>
+                <li><a (click)="editItem(announcement.id)">Edit</a></li>
+                <li>
+                  <a (click)="onDeleteAnnouncement(announcement.id)">Delete</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- <p style=" text-transform: uppercase;">{{announcement.user.student}} | {{announcement.datecreated}} </p> -->
+        <p>
+          {{ announcement.user.first_name }} &nbsp;
+          {{ announcement.user.last_name }} |
+          <span style="color: #7d7d7d">{{
+            announcement.datecreated | lastSeen
+          }}</span>
+        </p>
+        <p>{{ announcement.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>

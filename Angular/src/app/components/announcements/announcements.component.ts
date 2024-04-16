@@ -86,7 +86,7 @@ export class AnnouncementsComponent implements OnInit {
     console.log('Edit item clicked');
   }
 
-  openModal(): void {
-      this.ModalServiceService.CreateAnnoucement();
-  }
+  // openModal(): void {
+  //     this.ModalServiceService.CreateAnnoucement();
+  // }
 }

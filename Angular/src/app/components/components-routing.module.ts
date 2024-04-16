@@ -17,12 +17,13 @@ import { ChatComponent } from './chat/chat.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { ViewPostComponent } from './discusion-forum/view-post/view-post.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
+import { ViewAnnouncementComponent } from './announcements/view-announcement/view-announcement.component';
 
 
 const routes: Routes = [
         { path: '', component: HomepageComponent },
         { path: 'about', component: AboutComponent },
-        { path: 'announcement' , component:AnnouncementsComponent},
+        { path: 'announcements' , component:AnnouncementsComponent},
         { path: 'tutor' , component:TutorsComponent},
         { path:'tutors', component:TutorlistComponent},
        // { path: '**' , component:PageNotfoundComponent},
@@ -32,7 +33,8 @@ const routes: Routes = [
         { path: "chat", component:ChatComponent},
         { path: 'profile', component: ProfilePageComponent },
         {path:'edit-profile',component:EditProfileComponent},
-        {path:'view-post/:id',component:ViewPostComponent}
+        { path: 'view-post/:id', component: ViewPostComponent },
+        { path: "view-annoucement/:id", component:ViewAnnouncementComponent}
 
 ];
 

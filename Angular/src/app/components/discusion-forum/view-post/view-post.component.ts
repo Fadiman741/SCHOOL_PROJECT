@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
+import { NgForm } from '@angular/forms';
+
 
 
 @Component({
@@ -47,5 +49,23 @@ export class ViewPostComponent implements OnInit {
   //     this.comments = data;
   //   });
   // }
+  onComment(form: NgForm) {
+    if (form.valid) {
+      const post = {
+        content: form.value.comment,
+      };
+      this.apiservice.create_comments(post).subscribe(
+        (response) => {
+          console.log('Commented successful:', response);
+
+          form.resetForm();
+        },
+        (error) => {
+          console.error('Comment failed failed:', error);
+          // Handle error, e.g., display an error message to the user
+        }
+      );
+    }
+  }
 
 }
