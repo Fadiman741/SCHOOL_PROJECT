@@ -12,7 +12,8 @@ import { NgForm } from '@angular/forms';
 })
 export class ViewPostComponent implements OnInit {
   post_id: any;
-  post:any;
+  post: any;
+  
 
   breadCrumbItems: Array<{}> = [];
 
@@ -25,6 +26,8 @@ export class ViewPostComponent implements OnInit {
     this.apiservice.getPostById(postId).subscribe((data: any) => {
       this.post = data;
       console.log(this.post)
+      console.log(this.post.id)
+      this.post_id = this.post.id
     });
     console.log(this.post_id)
     // this.apiservice.getAllPosts
@@ -49,12 +52,12 @@ export class ViewPostComponent implements OnInit {
   //     this.comments = data;
   //   });
   // }
-  onComment(form: NgForm) {
+  onComment(form: NgForm, postId: number) {
     if (form.valid) {
-      const post = {
+        const commentData = {
         content: form.value.comment,
       };
-      this.apiservice.create_comments(post).subscribe(
+      this.apiservice.create_comments(postId, commentData).subscribe(
         (response) => {
           console.log('Commented successful:', response);
 

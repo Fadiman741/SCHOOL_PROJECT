@@ -150,10 +150,16 @@ private messageType: string | null = null;
      getUserById(userID: number): Observable<any> {    
           return this.http.get(`${this.baseUrls}/update-users/${userID}`);
      }
-//================================================COMMENTS================================================
-     create_comments(announcement: any): Observable<any> {
-          return this.http.post(this.baseUrls+'/create_comment/',announcement,{ headers: this.headers });
-          }
+     //================================================COMMENTS================================================
+     
+     // create_comments(announcement: any): Observable<any> {
+     //      return this.http.post(this.baseUrls+'/create_comment/',announcement,{ headers: this.headers });
+     //      }
+     create_comments(postId: number, commentData: any): Observable<any> {
+          console.log(commentData,postId)
+          return this.http.post(`${this.baseUrls}/posts/${postId}/comments/`, commentData, { headers: this.headers });
+     }
+     
      getAllcomments() : Observable<any>{
           return this.http.get(this.baseUrls + '/comments/')
           }

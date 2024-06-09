@@ -63,7 +63,7 @@
       <div class="create_post">
         <form
           style="display: flex; flex-direction: column"
-          (ngSubmit)="onComment(forumForm)"
+          (ngSubmit)="onComment(forumForm, post_id)"
           #forumForm="ngForm"
         >
           <textarea
@@ -80,6 +80,7 @@
           </div>
         </form>
       </div>
+
       <!-- </div> -->
     </div>
   </div>

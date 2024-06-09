@@ -1,4 +1,5 @@
 from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 from rest_framework import status
 from rest_framework.decorators import (
     api_view,
@@ -341,19 +342,35 @@ def comments(request):
     return Response(serializer.data)
 
 
+# @api_view(["POST"])
+# @permission_classes([IsAuthenticated])
+# def create_comment(request, post_id):
+#     user = request.user
+#     post = get_object_or_404(Post, id=post_id)
+
+#     serializer = CommentSerializer(data=request.data)
+#     Comment.objects.create(**request.data, user=user)
+#     if serializer.is_valid():
+#         serializer.save(user=user)
+#         return Response(serializer.data)
+#     else:
+#         return Response(serializer.errors)
+
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
-def create_comment(request):
+def create_comment(request, post_id=id):
     user = request.user
+    post = get_object_or_404(Post, id=post_id)
 
-    serializer = CommentSerializer(data=request.data)
-    Comment.objects.create(**request.data, user=user)
+    data = request.data.copy()
+    data['post'] = post.id  # Ensure the post field is included in the data
+
+    serializer = CommentSerializer(data=data)
     if serializer.is_valid():
-        serializer.save(user=user)
+        serializer.save(user=user, post=post)  # Save the comment with the user and post
         return Response(serializer.data)
     else:
-        return Response(serializer.errors)
-
+        return Response(serializer.errors, status=400)
 
 @api_view(["PUT", "GET", "DELETE"])
 @permission_classes([IsAuthenticated])
