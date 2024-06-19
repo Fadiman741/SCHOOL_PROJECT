@@ -18,6 +18,9 @@ fa-icon{
 h4 {
     padding-top: 10px;
 }
+li{
+    text-transform: uppercase;
+}
 .login button{
     padding:6px;
     background-color: #fff;

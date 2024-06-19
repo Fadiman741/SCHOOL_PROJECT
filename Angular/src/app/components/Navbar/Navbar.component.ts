@@ -47,7 +47,7 @@ export class NavbarComponent implements OnInit {
     this.loggedInUser = localStorage.getItem('loggedInUser');
     console.log(this.loggedInUser)
     this.getGrades();
-    this.getSubject();
+    // this.getSubject();
 
     this.apiservice.getCurrentUser().subscribe(
       response => {
@@ -74,23 +74,23 @@ export class NavbarComponent implements OnInit {
     this.apiservice.getGrades().subscribe(
       response => {
         this.grades = response;
-        console.log("Grades", this.grades)
+        console.log("MySchool Grades", this.grades)
       },
       error => {
         console.error('Error:', error);
       }
     );
   }
-  getSubject() {
-    this.apiservice.getSubjects().subscribe(
-      response => {
-        this.subjectslist = response;
-        console.log("Subjects", this.subjectslist)
-      },
-      error => {
-        console.error('Error:', error);
-      }
-    );
-  }
+  // getSubject() {
+  //   this.apiservice.getSubjects().subscribe(
+  //     response => {
+  //       this.subjectslist = response;
+  //       console.log("Subjects", this.subjectslist)
+  //     },
+  //     error => {
+  //       console.error('Error:', error);
+  //     }
+  //   );
+  // }
 
 }

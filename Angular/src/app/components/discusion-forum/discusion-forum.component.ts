@@ -21,6 +21,8 @@ export class DiscusionForumComponent implements OnInit {
   showDropdown = false;
   announcements: any;
 
+
+
   currentUser: any;
 
   // constructor(private apiservice: ApiService,private router:Router ,private modalservice:ModalServiceService) { }
@@ -89,7 +91,9 @@ export class DiscusionForumComponent implements OnInit {
   viewPost(data:any) {
     this.router.navigate(['/view-post', data.id]);
   }
-
+  view_Post(data: any) {
+    this.router.navigate(['forum', data.grade, data.subject, data.id]);
+  }
   editItem(id:number) {
     // Implement your edit logic here
     console.log('Edit item clicked');

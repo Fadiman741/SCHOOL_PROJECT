@@ -79,7 +79,7 @@ class CommentSerializer(serializers.ModelSerializer):
             "created_at",
             "likes",
             "unlikes",
-            "comments",
+            # "comments",
         ]
 
 

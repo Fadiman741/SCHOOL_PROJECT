@@ -40,59 +40,18 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="tutor">TUTORING</a>
           </li>
-          <li class="nav-item dropdown">
+          <li *ngFor="let grade of grades" class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
               role="button"
               data-bs-toggle="dropdown"
-              >GRADE 10</a
+              >{{ grade.name }}</a
             >
             <ul class="dropdown-menu dropdown-menu-end">
-              <li>
-                <a class="dropdown-item" routerLink="forum">MATHEMATICS</a>
-              </li>
-              <li>
-                <a class="dropdown-item" routerLink="forum"
-                  >PHYSICAL SCIENCES</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              >GRADE 11</a
-            >
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li>
-                <a class="dropdown-item" routerLink="forum">MATHEMATICS</a>
-              </li>
-              <li>
-                <a class="dropdown-item" routerLink="forum"
-                  >PHYSICAL SCIENCES</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              >GRADE 12</a
-            >
-            <ul class="dropdown-menu dropdown-menu-end">
-              <li>
-                <a class="dropdown-item" routerLink="forum">MATHEMATICS</a>
-              </li>
-              <li>
-                <a class="dropdown-item" routerLink="forum"
-                  >PHYSICAL SCIENCES</a
-                >
+              <li *ngFor="let subject of grade.subjects">
+                <a class="dropdown-item" [routerLink]="['/forum', grade.name, subject.name]">{{
+                  subject.name
+                }}</a>
               </li>
             </ul>
           </li>

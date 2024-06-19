@@ -141,6 +141,24 @@ def update_announcement(request, pk=id):
 
 # ==============================DROP DOWN==============================
 
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def grade_subject_list(request):
+    grades = Grade.objects.all()
+    data = []
+
+    for grade in grades:
+        subjects = grade.subject_set.all()
+        subjects_list = [{'id': subject.id, 'name': subject.name} for subject in subjects]
+        data.append({
+            'id': grade.id,
+            'name': grade.name,
+            'subjects': subjects_list
+        })
+
+    return Response(data)
+
+
 @api_view(['GET', 'POST'])
 @permission_classes([AllowAny])
 def grade_list(request):

@@ -27,13 +27,15 @@ const routes: Routes = [
         { path: 'tutor' , component:TutorsComponent},
         { path:'tutors', component:TutorlistComponent},
        // { path: '**' , component:PageNotfoundComponent},
-        { path:'forum', component:DiscusionForumComponent},
+        { path: 'forum', component: DiscusionForumComponent },
+        { path: 'forum/:grade/:subject', component: DiscusionForumComponent },
         { path: 'inbox' , component:InboxComponent},
         { path: "notifications", component:NotificationsComponent},
         { path: "chat", component:ChatComponent},
         { path: 'profile', component: ProfilePageComponent },
         {path:'edit-profile',component:EditProfileComponent},
         { path: 'view-post/:id', component: ViewPostComponent },
+        { path: 'forum/:grade/:subject/:id', component: ViewPostComponent },
         { path: "view-annoucement/:id", component:ViewAnnouncementComponent}
 
 ];

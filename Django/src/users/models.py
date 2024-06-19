@@ -107,15 +107,20 @@ class Announcement(models.Model):
     datecreated = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.title
+        return f"{self.title} "
 
 class Grade(models.Model):
     name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return f"{self.name} "
 
 class Subject(models.Model):
     name = models.CharField(max_length=100)
     grade = models.ForeignKey(Grade, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f"{self.name} "
 class Subtopic(models.Model):
     name = models.CharField(max_length=100)
     subject = models.ForeignKey(Subject, on_delete=models.CASCADE)
@@ -125,19 +130,23 @@ class Post(models.Model):
     content = models.TextField(null=False)
     created_at = models.DateTimeField(auto_now_add=True)
     likes = models.IntegerField(default=0, null=True)
-    unlikes = models.IntegerField(default=0, null=True)
+    # unlikes = models.IntegerField(default=0, null=True)
     comments = models.IntegerField(default=0, null=True)
 
+    def __str__(self):
+        return f"{self.user} "
 
 class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="user")
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     content = models.TextField(null=False)
-    created_at = models.DateTimeField(auto_now_add=True)
-    likes = models.IntegerField(User, default=0, null=True)
+    likes = models.IntegerField( default=0, null=True)
     unlikes = models.IntegerField(default=0, null=True)
-    comments = models.IntegerField(default=0, null=True)
+    # comments = models.IntegerField(default=0, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return 'Comment by {} - {}'.format(self.user, self.content)
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
